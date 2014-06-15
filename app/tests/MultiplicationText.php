@@ -7,7 +7,7 @@ class MultiplicationTest extends TestCase {
             $addition = new Multiplication();
             $product = $addition->run(5, 5);
 
-            $this->assertEquals(25, $produt);
+            $this->assertEquals(25, $product);
       }
 
       public function testFindsTheProductOfNegativeNumbers()
