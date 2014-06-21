@@ -1,18 +1,18 @@
 <?php
 
-class SubtractionTest extends TestCase {
+class SubtracionTest extends TestCase {
 
       public function testFindsTheDifferenceOfPositiveNumbers()
       {
-            $subtraction = new Subtraction();
-            $difference = $subtraction->run(5, 0);
+            $subtracion = new Subtracion();
+            $difference = $subtracion->run(5, 0);
 
             $this->assertEquals(-5, $difference);
       }
 
       public function testFindsTheDifferenceOfNegativeNumbers()
       {
-            $subtraction = new Subtraction();
+            $subtraction = new Subtracion();
             $difference = $subtraction->run(-5, 0);
 
             $this->assertEquals(5, $difference);
