@@ -14,7 +14,8 @@ class CalculatorTest extends TestCase {
 
       public function testInstance()
       {
-            new Calculator();
+            $instance = new Calculator();
+            $this->assertTrue($instance !== null);
       }
 
       public function testResultDefaultsToZero()
