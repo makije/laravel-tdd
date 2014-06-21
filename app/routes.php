@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/', function()
+{
+      return Redirect::action('CalculatorRestController@getIndex');
+});
 
 Route::controller('calculator', 'CalculatorRestController');
