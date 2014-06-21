@@ -53,6 +53,18 @@ class CalculatorRestControllerTest extends TestCase {
             $this->assertEquals(4.5, $json->result);
       }
 
+      public function testPostSubtracionWithNoArguments()
+      {
+            $response = $this->call('POST', '/calculator/subtracion', array('' => array()));
+            $this->assertEquals(406, $response->getStatusCode());
+      }
+
+      public function testPostSubtracionWithAnInsufficientAmountOfArguments()
+      {
+            $response = $this->call('POST', '/calculator/subtracion', array('arguments' => array(1)));
+            $this->assertEquals(406, $response->getStatusCode());
+      }
+
       public function testPostSubtractionWithInvalidArguments()
       {
             $response = $this->call('POST', '/calculator/subtracion', array('arguments' => array('foo', 'bar')));

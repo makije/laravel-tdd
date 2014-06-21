@@ -35,6 +35,16 @@ class CalculatorRestController extends BaseController {
 
       public function postSubtracion()
       {
+            if(!Input::has('arguments'))
+            {
+                  return Response::json(array('error' => 'No arguments provided'), 406);
+            }
+
+            if(count(Input::get('arguments')) <= 1)
+            {
+                  return Response::json(array('error' => 'Not enough arguments'), 406);
+            }
+
             try
             {
                   $calculator = new Calculator();
